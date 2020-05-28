@@ -7,11 +7,11 @@ from .managers import ConsultaManager
 
 class Consulta(models.Model):
   objects = ConsultaManager()
-  data_agendamento = models.Date(null = False, auto_now_add = True)
+  data_agendamento = models.DateField(null = False, auto_now_add = True)
   dia = models.ForeignKey(Agenda, null = False, on_delete = models.CASCADE)
   horario = models.ForeignKey(Horario, null = True, on_delete = models.SET_NULL)
   Medico = models.ForeignKey(Medico, null = False, on_delete = models.CASCADE)
-  usuario = models.ForeignKey(User)
+  usuario = models.ForeignKey(User, null = False, on_delete = models.CASCADE)
 
   class Meta:
     ordering = ['dia__data']

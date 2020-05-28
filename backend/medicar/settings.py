@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'modulos.especialidade.apps.EspecialidadeConfig',
     'modulos.medico.apps.MedicoConfig',
     'modulos.agenda.apps.AgendaConfig',
+    'modulos.consulta.apps.ConsultaConfig',
     
 
     # 'modulos.veiculo.apps.VeiculoConfig',

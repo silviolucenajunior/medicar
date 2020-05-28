@@ -5,4 +5,4 @@ class ConsultaManager(models.Manager):
   def get_queryset(self):
     hoje = date.today()
     
-    return super().get_queryset().filter(agenda__data__lt = hoje)
+    return super().get_queryset().filter(dia__data__lt = hoje)

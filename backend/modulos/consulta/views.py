@@ -1,10 +1,10 @@
 from rest_framework import viewsets
 from rest_framework import permissions
 
-from .models import Agenda
-from .serializers import AgendaSerializer
+from .models import Consulta
+from .serializers import ConsultaSerializer
 
-class AgendaViewSet(viewsets.ModelViewSet):
-  queryset = Agenda.objects.all()
-  serializer_class = AgendaSerializer
-  #permission_classes = [permissions.IsAuthenticated]
+class ConsultaViewSet(viewsets.ModelViewSet):
+  queryset = Consulta.objects.all()
+  serializer_class = ConsultaSerializer
+  permission_classes = [permissions.IsAuthenticated]

@@ -7,4 +7,4 @@ from .serializers import AgendaSerializer
 class AgendaViewSet(viewsets.ModelViewSet):
   queryset = Agenda.objects.all()
   serializer_class = AgendaSerializer
-  #permission_classes = [permissions.IsAuthenticated]
+  permission_classes = [permissions.IsAuthenticated]

@@ -7,5 +7,5 @@ from .serializers import MedicoSerializer
 class MedicoViewSet(viewsets.ModelViewSet):
   queryset = Medico.objects.all()
   serializer_class = MedicoSerializer
-  #permission_classes = [permissions.IsAuthenticated]
+  permission_classes = [permissions.IsAuthenticated]
   search_fields = ['nome', 'especialidade']

@@ -6,6 +6,7 @@ whitenoise
 dj-database-url
 mysql-connector-python
 djangorestframework
+djoser
 django-filter
 mysqlclient
 django_select2

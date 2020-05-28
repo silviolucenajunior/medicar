@@ -22,5 +22,8 @@ class Horario(models.Model):
   agenda = models.ForeignKey(Agenda, on_delete = models.CASCADE, related_name = "horarios")
   horario = models.TimeField()
 
+  class Meta:
+    ordering = ['horario']
+
   def __str__(self):
     return self.horario.strftime('%H:%M')

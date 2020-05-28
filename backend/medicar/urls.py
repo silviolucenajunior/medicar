@@ -23,6 +23,7 @@ from django.contrib.auth import urls as auth_urls
 
 from modulos.especialidade.views import EspecialidadeViewSet
 from modulos.agenda.views import AgendaViewSet
+from modulos.medico.views import MedicoViewSet
 
 
 admin.site.site_header = "COMOMO"
@@ -32,6 +33,7 @@ admin.site.index_title = "COMOMO"
 router = routers.DefaultRouter()
 router.register(r'especialidades', EspecialidadeViewSet)
 router.register(r'agenda', AgendaViewSet)
+router.register(r'medico', MedicoViewSet)
 
 urlpatterns = [
     path('api/', include(router.urls)),

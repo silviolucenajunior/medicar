@@ -1,0 +1,46 @@
+version: '2'
+volumes:
+  medicar-mysql-volume:
+  medicar-static-files-volume:
+
+services:
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - medicar-mysql-volume:/var/lib/mysql
+    ports:
+      - "3311:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=medicar
+      - MYSQL_DATABASE=medicar
+      - MYSQL_USER=medicar
+      - MYSQL_PASSWORD=medicar
+  admin:
+    build: ./backend
+    #command: gunicorn src.medicar.wsgi:application --bind 0.0.0.0:8000
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./backend:/code
+      - ./backend/medicar/assets:/code/src/medicar/assets
+      - ./backend/medicar/staticfiles:/code/src/medicar/staticfiles
+    expose:
+      - 8000
+    ports:
+      - "8081:8000"
+    env_file:
+      - ./backend/.env.dev
+    depends_on:
+      - mysql
+    links:
+      - mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: medicar-phpmyadmin
+    ports:
+      - "8092:80"
+    environment:
+      - UPLOAD_LIMIT=100000
+    links:
+      - mysql:db
+    volumes:
+    - ./backend/php_upload.ini:/usr/local/etc/php/conf.d/uploads.ini

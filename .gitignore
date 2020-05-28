@@ -1,0 +1,5 @@
+.scannerwork
+.coverage
+src/comomo/staticfiles/
+*__pycache__*
+*.pyc

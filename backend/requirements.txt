@@ -1,0 +1,14 @@
+Django
+gunicorn
+django-localflavor
+psycopg2
+whitenoise
+dj-database-url
+mysql-connector-python
+djangorestframework
+django-filter
+mysqlclient
+django_select2
+django-extensions
+django-material-admin
+django-material

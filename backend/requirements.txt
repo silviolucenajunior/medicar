@@ -6,6 +6,7 @@ whitenoise
 dj-database-url
 mysql-connector-python
 djangorestframework
+django-cors-headers
 djoser
 django-filter
 mysqlclient

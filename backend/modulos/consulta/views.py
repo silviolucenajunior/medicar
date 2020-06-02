@@ -1,5 +1,5 @@
-from rest_framework import viewsets, Response
-from rest_framework import permissions
+from rest_framework import viewsets, permissions
+from rest_framework.response import Response
 
 from .models import Consulta
 from .serializers import ConsultaSerializer

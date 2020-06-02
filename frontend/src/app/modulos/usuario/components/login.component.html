@@ -1,9 +1,9 @@
 <form class="userLogin">
     <div class="form-group">
-        <input type="text" class="form-control" aria-label="Email" placeholder="Email">
+        <input #username type="text" class="form-control" aria-label="Email" placeholder="Email">
     </div>
     <div class="form-group">
-        <input type="text" class="form-control" aria-label="Senha" placeholder="Senha" data-toggle="password">
+        <input #password type="text" class="form-control" aria-label="Senha" placeholder="Senha" data-toggle="password">
     </div>
     <div class="custom-control custom-checkbox my-1 mr-sm-2">
         <input type="checkbox" class="custom-control-input" id="customControlInline">
@@ -11,6 +11,6 @@
     </div>
     <div class="form-group userLogin__actionsButton">
         <button class="btn btn-link" type="button" routerLink="/cadastro">Criar conta</button>
-        <button class="btn btn-primary" type="button">Acessar</button>
+        <button class="btn btn-primary" (click)="login(username.value, password.value)" type="button">Acessar</button>
     </div>
 </form>

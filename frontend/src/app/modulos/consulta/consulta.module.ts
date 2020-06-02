@@ -5,6 +5,7 @@ import { ListaConsultaComponent } from './components/lista.component';
 import { CadastroConsultaComponent } from './components/cadastro.component';
 import { ConsultaListagemPage } from './pages/listagem.page';
 import { ConsultaCadastroPage } from './pages/cadastro.page';
+import { ConsultasService } from './consulta.service';
 
 @NgModule({
   imports: [
@@ -15,6 +16,9 @@ import { ConsultaCadastroPage } from './pages/cadastro.page';
     CadastroConsultaComponent,
     ConsultaListagemPage,
     ConsultaCadastroPage,
+  ],
+  providers: [
+    ConsultasService
   ]
 })
 export class ConsultaModule {}

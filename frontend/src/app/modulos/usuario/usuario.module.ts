@@ -7,6 +7,7 @@ import { LoginUsuarioComponent } from './components/login.component';
 import { CadastroUsuarioPage } from './pages/cadastro.page';
 import { LoginUsuarioPage } from './pages/login.page';
 import { UsuarioRoutingModule } from './routing.module';
+import { UsuarioService } from './usuario.services';
 
 @NgModule({
   imports: [
@@ -18,6 +19,9 @@ import { UsuarioRoutingModule } from './routing.module';
     LoginUsuarioComponent,
     CadastroUsuarioPage,
     LoginUsuarioPage
+  ],
+  providers: [
+    UsuarioService
   ]
 })
 export class UsuarioModule {}

@@ -1,0 +1,4 @@
+<select class="custom-select" [(ngModel)]="selected">
+  <option selected>Especialidade</option>
+  <option *ngFor="let especialidade of especialidades" value="{{especialidade.id}}">{{especialidade.nome}}</option>
+</select>

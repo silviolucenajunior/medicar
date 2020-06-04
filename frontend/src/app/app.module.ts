@@ -14,6 +14,14 @@ import { AuthInterceptor } from './modulos/auth/auth.interceptors';
 import { AuthGuard } from './modulos/auth/auth.guards';
 import { TokenAuthService } from './modulos/auth/auth.service';
 
+// import { AgendaService } from './modulos/agenda/agenda.services';
+// import { MedicoService } from './modulos/medico/medico.services';
+// import { EspecialidadeService } from './modulos/especialidade/especialidade.services';
+
+import { MedicoModule } from './modulos/medico/medico.module';
+import { EspecialidadeModule } from './modulos/especialidade/especialidade.module';
+import { AgendaModule } from './modulos/agenda/agenda.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +33,9 @@ import { TokenAuthService } from './modulos/auth/auth.service';
     SharedModule,
     UsuarioModule,
     ConsultaModule,
+    MedicoModule,
+    EspecialidadeModule,
+    AgendaModule,
     AppRoutingModule
   ],
   providers: [

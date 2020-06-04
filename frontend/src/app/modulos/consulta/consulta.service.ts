@@ -13,8 +13,13 @@ export class ConsultasService {
     return this.http.get(this.GETALL_ENDPOINT);
   }
 
-  insert(consulta) {
-    this.http.post(this.INSERT_ENDPOINT, consulta);
+  marcarConsulta(agenda_id, horario) {
+    this.http.post(this.INSERT_ENDPOINT, {
+      params: {
+        'agenda_id' : agenda_id,
+        'horario' : horario
+      }
+    });
   }
 
   delete(consulta) {

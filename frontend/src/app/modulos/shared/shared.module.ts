@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 
 import { HeaderMediumComponent } from './components/headerMedium.component';
-
+import { TopBarComponent } from './components/topBar.component';
 @NgModule({
   declarations: [
-    HeaderMediumComponent
+    HeaderMediumComponent,
+    TopBarComponent,
   ],
   exports: [
-    HeaderMediumComponent
+    HeaderMediumComponent,
+    TopBarComponent
   ]
 })
 export class SharedModule {}

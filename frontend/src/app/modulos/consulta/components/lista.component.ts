@@ -4,7 +4,8 @@ import { ConsultasService } from '../consulta.service';
 
 @Component({
   selector: 'consulta-lista',
-  templateUrl: './lista.component.html'
+  templateUrl: './lista.component.html',
+  styleUrls: ['./lista.component.scss']
 })
 export class ListaConsultaComponent implements OnInit {
   items;

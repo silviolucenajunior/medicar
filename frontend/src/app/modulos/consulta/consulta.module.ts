@@ -14,10 +14,10 @@ import { SharedModule } from '../shared/shared.module';
 @NgModule({
   imports: [
     ConsultaRoutingModule,
-     MedicoModule,
-     EspecialidadeModule,
-     AgendaModule,
-     SharedModule
+    MedicoModule,
+    EspecialidadeModule,
+    AgendaModule,
+    SharedModule
   ],
   declarations: [
     ListaConsultaComponent,

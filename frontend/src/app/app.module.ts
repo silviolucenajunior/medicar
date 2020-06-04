@@ -4,7 +4,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { SharedModule } from './modulos/shared/shared.module';
 import { UsuarioModule } from './modulos/usuario/usuario.module';
@@ -28,7 +27,6 @@ import { AgendaModule } from './modulos/agenda/agenda.module';
   ],
   imports: [
     BrowserModule,
-    FontAwesomeModule,
     HttpClientModule,
     SharedModule,
     UsuarioModule,

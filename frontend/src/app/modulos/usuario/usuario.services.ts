@@ -15,11 +15,9 @@ export class UsuarioService {
       'last_name' : nome.split(" ").slice(1).join(" ")
     }
     this.http.post(this.CADASTRO_ENDPOINT, usuario).subscribe( (data) => {
-      console.log("##############");
-      console.log("Cadastro efetuado com sucesso");
-      console.log(data);
     }, (err) => {
       console.log("Error no cadastro");
+      console.log(err);
     });
   }
 

@@ -7,9 +7,14 @@ import { UsuarioService } from '../usuario.services';
   styleUrls: ['cadastro.component.scss']
 })
 export class CadastroUsuarioComponent {
+  nome;
+  email;
+  senha;
+  confirmarSenha;
+  
   constructor( private usuarioService : UsuarioService ) {}
 
-  register() {
-
+  cadastrarUsuario() {
+    this.usuarioService.insert(this.nome, this.email, this.senha);
   }
 }

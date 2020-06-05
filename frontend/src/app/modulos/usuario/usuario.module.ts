@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule} from '@angular/forms';
 
 import { SharedModule } from '../shared/shared.module';
 
@@ -12,6 +13,7 @@ import { UsuarioService } from './usuario.services';
 @NgModule({
   imports: [
     UsuarioRoutingModule,
+    FormsModule,
     SharedModule
   ],
   declarations: [

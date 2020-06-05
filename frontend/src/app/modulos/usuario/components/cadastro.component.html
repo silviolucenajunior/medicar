@@ -1,18 +1,22 @@
 <form class="cadastroUsuario">
-    <div class="form-group">
-        <input type="text" class="form-control" aria-label="Nome" placeholder="Nome">
+    <div class="form-group floating-label">
+        <input [(ngModel)]="nome" name="nome" type="text" class="form-control" aria-label="Nome" placeholder="Nome">
+        <label>Nome</label>
     </div>
-    <div class="form-group">
-        <input type="email" class="form-control" aria-label="Email" placeholder="Email">
+    <div class="form-group floating-label">
+        <input [(ngModel)]="email" name="email" type="email" class="form-control" aria-label="Email" placeholder="Email">
+        <label>Email</label>
     </div>
-    <div class="form-group">
-        <input type="password" class="form-control" aria-label="Senha" placeholder="Senha">
+    <div class="form-group floating-label">
+        <input [(ngModel)]="senha" name="password" type="password" class="form-control" aria-label="Senha" placeholder="Senha">
+        <label>Senha</label>
     </div>
-    <div class="form-group">
-        <input type="password" class="form-control" aria-label="Confirmar senha" placeholder="Confirmar senha">
+    <div class="form-group floating-label">
+        <input [(ngModel)]="confirmarSenha" name="confirmarSenha" type="password" class="form-control" aria-label="Confirmar senha" placeholder="Confirmar senha">
+        <label>Confirmar senha</label>
     </div>
     <div class="form-group cadastroUsuario__actionsButton">
         <button class="btn btn-link" type="button" routerLink="/login">Cancelar</button>
-        <button class="btn btn-primary" type="button">Cadastrar</button>
+        <button class="btn btn-primary" type="button" (click)="cadastrarUsuario()">Confirmar</button>
     </div>
 </form>

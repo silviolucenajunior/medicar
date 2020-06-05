@@ -14,7 +14,6 @@ export class TopBarComponent {
   }
 
   logout() {
-    console.log("BERI BERI");
     this.authService.logout();
     this.router.navigate(['login']);
   }

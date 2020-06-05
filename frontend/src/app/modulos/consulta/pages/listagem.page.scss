@@ -1,0 +1,11 @@
+.pageListagemConsulta {
+    &__title {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    &__cadastrar {
+        & span i {
+            margin: 0px 12px;
+        }
+    }
+}

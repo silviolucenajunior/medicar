@@ -1,12 +1,12 @@
-<div class="container">
+<div class="container pageListagemConsulta">
     <top-bar></top-bar>
     <div class="card shadow-sm">
         <div class="card-body">
             <div class="d-flex justify-content-between">
-                <span>Consultas</span>
-                <button class="btn btn-primary" type="button" (click)="novaConsulta()">
-                    <span class="btn-label"><i class="fa fa-camera"></i></span>
-                    Cadastrar
+                <span class="pageListagemConsulta__title">Consultas</span>
+                <button class="btn btn-primary pageListagemConsulta__cadastrar" type="button" (click)="novaConsulta()">
+                    <span class="btn-label"><i class="fa fa-plus"></i></span>
+                    Nova Consulta
                 </button>
             </div>
             <consulta-lista></consulta-lista>

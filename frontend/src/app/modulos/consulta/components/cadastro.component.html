@@ -2,4 +2,8 @@
     <especialidade-select #especialidade></especialidade-select>
     <medico-select #medico [especialidade]="especialidade.getSelectedValue()"></medico-select>
     <agenda-select #agenda [medico]="medico.getSelectedValue()" [especialidade]="especialidade.getSelectedValue()"></agenda-select>
+    <div class="form-group userLogin__actionsButton">
+        <button class="btn btn-link" type="button" routerLink="/cadastro">Cancelar</button>
+        <button class="btn btn-primary" type="button">Confirmar</button>
+    </div>
 </form>

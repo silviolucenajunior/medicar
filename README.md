@@ -1,35 +1,36 @@
-# COMOMO
+# MEDICAR
 
-Sistema de Controle e Monitoramento de Veiculos
+Desafio: Medicar
+Sistema para gestão de consultas em uma clínica médica
 
 # Requisitos
  - docker
  - docker-compose
- - sonar-scanner (opcional)
+ - ng-cli
  
 # Stack
 - Python/Django
-- Gunicorn
-- Nginx
-- MySQL
+- Angular
 
-# Rodando o projeto em desenvolvimento
+# Rodando o projeto em desenvolvimento [Backend]
 
-  - Importar o projeto
+  - Na raiz do repositorio
   - Subir o projeto com composer
   ```
   docker-compose up --build
   ```
 - Instalar as migrations
  ```
-  docker exec -it comomo_web_1 python src/manage.py migrate
-  ```
-- Coletar os arquivos staticos
-```
-  docker exec -it comomo_web_1 python src/manage.py collectstatic
+  docker exec -it medicar_admin_1 python src/manage.py migrate
   ```
 - Criar superusuario
 ```
-  docker exec -it comomo_web_1 python src/manage.py createsuperuser
+  docker exec -it medicar_admin_1 python src/manage.py createsuperuser
   ```
 - Acessar o sistema em 127.0.0.1:8081
+
+# Rodando o projeto em desenvolvimento [Frontend]
+
+  - No diretorio frontend
+  - npm install
+  - ng serve

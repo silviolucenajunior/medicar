@@ -10,6 +10,7 @@ class HorarioSerializer(serializers.ModelSerializer):
 
 class AgendaSerializer(serializers.ModelSerializer):
   horarios = HorarioSerializer(many = True)
+  medico = MedicoSerializer()
 
   class Meta:
     model = Agenda

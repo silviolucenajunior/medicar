@@ -10,7 +10,7 @@ import { TokenAuthService } from '../../auth/auth.service';
 export class TopBarComponent {
   constructor (private authService : TokenAuthService, private router : Router ) {}
   getLogedUsername() {
-    return "Lucas Pinto";
+    return this.authService.getUserDisplay();
   }
 
   logout() {

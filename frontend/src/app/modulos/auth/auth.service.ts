@@ -5,6 +5,8 @@ import { tap, shareReplay } from 'rxjs/operators';
 @Injectable()
 export class TokenAuthService {
   private AUTH_ENDPOINT = "http://127.0.0.1:8081/auth/token/login/";
+  private ME_ENDPOINT = "http://127.0.0.1:8081/auth/users/me/";
+  private currentUser;
 
   constructor(private http : HttpClient){}
 
@@ -13,6 +15,7 @@ export class TokenAuthService {
     .pipe(
       tap( (response) => {
         this.setToken(response['auth_token']);
+        this.setCurrentUserData();
       }),
       shareReplay()
     );
@@ -20,6 +23,26 @@ export class TokenAuthService {
 
   private setToken(token) {
     localStorage.setItem('token', token);
+  }
+
+  private setCurrentUserData() {
+    this.http.get(this.ME_ENDPOINT).subscribe(
+      user => {
+        this.currentUser = user;
+      },
+      error => {
+        console.log("Error");
+        console.log(error);
+      }
+    );
+  }
+
+  public getCurrentUser() {
+    return this.currentUser;
+  }
+
+  public getUserDisplay() {
+    return this.currentUser && this.currentUser['username'] || "";
   }
 
   public isLoggedIn() {

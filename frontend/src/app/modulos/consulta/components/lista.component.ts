@@ -13,14 +13,34 @@ export class ListaConsultaComponent implements OnInit {
   constructor (private consultaService : ConsultasService ) {}
 
   ngOnInit() {
-    this.consultaService.getAll().subscribe (
+    this.loadItems();
+  }
+
+  loadItems() {
+    return this.consultaService.getAll().subscribe (
       response => {
-        console.log("Sucesso nas consultas");
         this.items = response;
-        console.log(response);
       },
       error => {
         console.log("Error");
-      });
+        console.log(error);
+      }
+    );
+  }
+
+  desmarcarConsulta(consultaId) {
+    this.consultaService.delete(consultaId).subscribe(
+      success => {
+        this.loadItems();
+      },
+      error => {
+        console.log("error");
+        console.log(error);
+      }
+    );
+  }
+
+  reload() {
+
   }
 }

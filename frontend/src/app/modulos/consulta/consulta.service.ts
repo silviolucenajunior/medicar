@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 export class ConsultasService {
   private GETALL_ENDPOINT = "http://127.0.0.1:8081/api/consulta";
   private INSERT_ENDPOINT = "http://127.0.0.1:8081/api/consulta/";
-  private DELETE_ENDPOINT = "";
+  private DELETE_ENDPOINT = "http://127.0.0.1:8081/api/consulta/";
 
   constructor(private http : HttpClient) {}
 
@@ -18,18 +18,9 @@ export class ConsultasService {
       'agenda' : agenda_id,
       'horario' : horario
     });
-    // return this.http.post(this.INSERT_ENDPOINT,{
-    //   'agenda' : agenda_id,
-    //   'horario' : horario
-    // }).subscribe( success => {
-    //   console.log("BEA");
-    // }, error => {
-    //   console.log("Error");
-    //   console.log(error);
-    // });
   }
 
   delete(consulta) {
-    this.http.delete(this.DELETE_ENDPOINT, consulta['id']);
+    return this.http.delete(this.DELETE_ENDPOINT + consulta);
   }
 }

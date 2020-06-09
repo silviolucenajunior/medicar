@@ -1,9 +1,15 @@
 <form class="cadastroConsulta">
-    <especialidade-select #especialidade></especialidade-select>
-    <medico-select #medico [especialidade]="especialidade.getSelectedValue()"></medico-select>
-    <agenda-select #agenda [medico]="medico.getSelectedValue()" [especialidade]="especialidade.getSelectedValue()"></agenda-select>
-    <div class="form-group userLogin__actionsButton">
-        <button class="btn btn-link" type="button" routerLink="/cadastro">Cancelar</button>
-        <button class="btn btn-primary" type="button">Confirmar</button>
+    <div class="form-group floating-label">
+        <especialidade-select #especialidade></especialidade-select>
+    </div>
+    <div class="form-group">
+        <medico-select #medico [especialidade]="especialidade.getSelectedValue()"></medico-select>
+    </div>
+    <div class="form-group">
+        <agenda-select #agenda [medico]="medico.getSelectedValue()" [especialidade]="especialidade.getSelectedValue()"></agenda-select>
+    </div>
+    <div class="form-group cadastroConsulta__actionsButton">
+        <button class="btn btn-link" type="button" routerLink="/consultas">Cancelar</button>
+        <button class="btn btn-primary" type="button" (click)="cadastrarConsulta()">Confirmar</button>
     </div>
 </form>

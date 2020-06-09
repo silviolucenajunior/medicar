@@ -2,12 +2,19 @@ from rest_framework import viewsets, permissions
 from rest_framework.response import Response
 
 from .models import Consulta
+from modulos.agenda.models import Agenda
 from .serializers import ConsultaSerializer
 
 class ConsultaViewSet(viewsets.ModelViewSet):
   queryset = Consulta.objects.all()
   serializer_class = ConsultaSerializer
   permission_classes = [permissions.IsAuthenticated]
+
+  def get_queryset(self):
+    return Consulta.objects.filter(usuario = self.request.user).all()
+
+  def perform_create(self, serializer):
+    serializer.save(usuario = self.request.user)
 
   def destroy(self, request, *args, **kwargs):
       consulta = self.get_object()

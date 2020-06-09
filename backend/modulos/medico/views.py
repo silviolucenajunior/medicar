@@ -9,3 +9,4 @@ class MedicoViewSet(viewsets.ModelViewSet):
   serializer_class = MedicoSerializer
   permission_classes = [permissions.IsAuthenticated]
   search_fields = ['nome', 'especialidade']
+  filter_fields = ['especialidade']

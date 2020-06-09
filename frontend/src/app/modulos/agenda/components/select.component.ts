@@ -10,8 +10,8 @@ export class AgendaSelectComponent implements OnChanges, OnInit{
   @Input() especialidade;
   @Input() medico;
   agendas;
-  agenda;
-  horario;
+  agenda = "";
+  horario = "";
 
   constructor (private agendaService : AgendaService) {}
 
@@ -41,11 +41,19 @@ export class AgendaSelectComponent implements OnChanges, OnInit{
 
   getAvailableHorarios() {
     if (this.agenda) {
-      let agenda = this.agendas.find( agenda => { console.log(agenda.id + ' () ' + this.agenda); return agenda.id == this.agenda });
+      let agenda = this.agendas.find( agenda => {return agenda.id == this.agenda });
 
       return agenda ? agenda['horarios'] : [];
     }
 
     return [];
+  }
+
+  getSelectedAgenda() {
+    return this.agenda;
+  }
+
+  getSelectedHorario() {
+    return this.horario;
   }
 }

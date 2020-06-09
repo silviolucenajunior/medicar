@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class ConsultasService {
   private GETALL_ENDPOINT = "http://127.0.0.1:8081/api/consulta";
-  private INSERT_ENDPOINT = "";
+  private INSERT_ENDPOINT = "http://127.0.0.1:8081/api/consulta/";
   private DELETE_ENDPOINT = "";
 
   constructor(private http : HttpClient) {}
@@ -14,12 +14,19 @@ export class ConsultasService {
   }
 
   marcarConsulta(agenda_id, horario) {
-    this.http.post(this.INSERT_ENDPOINT, {
-      params: {
-        'agenda_id' : agenda_id,
-        'horario' : horario
-      }
+    return this.http.post(this.INSERT_ENDPOINT, {
+      'agenda' : agenda_id,
+      'horario' : horario
     });
+    // return this.http.post(this.INSERT_ENDPOINT,{
+    //   'agenda' : agenda_id,
+    //   'horario' : horario
+    // }).subscribe( success => {
+    //   console.log("BEA");
+    // }, error => {
+    //   console.log("Error");
+    //   console.log(error);
+    // });
   }
 
   delete(consulta) {

@@ -1,4 +1,4 @@
 <select class="custom-select" [(ngModel)]="selected" [attr.disabled]="especialidade ? null : 'disabled' ">
-  <option selected>Medico</option>
+  <option value="" selected>Medico</option>
   <option *ngFor="let medico of medicos" value="{{ medico.id }}">{{ medico.nome }}</option>
 </select>

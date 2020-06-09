@@ -9,7 +9,7 @@ import { Especialidade } from '../types/especialidade';
 })
 export class EspecialidadeSelectComponent implements OnInit {
   especialidades : Especialidade[];
-  selected;
+  selected = "";
 
   constructor (private especialidadeService : EspecialidadeService ) {}
   ngOnInit() {

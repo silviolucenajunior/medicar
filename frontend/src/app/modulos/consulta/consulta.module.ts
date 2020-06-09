@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-
+import { CommonModule } from '@angular/common';
+import { BrowserModule} from '@angular/platform-browser';
 import { ConsultaRoutingModule } from './routing.module';
 import { ListaConsultaComponent } from './components/lista.component';
 import { CadastroConsultaComponent } from './components/cadastro.component';
@@ -13,6 +14,8 @@ import { AgendaModule } from '../agenda/agenda.module'
 import { SharedModule } from '../shared/shared.module';
 @NgModule({
   imports: [
+    BrowserModule,
+    CommonModule,
     ConsultaRoutingModule,
     MedicoModule,
     EspecialidadeModule,

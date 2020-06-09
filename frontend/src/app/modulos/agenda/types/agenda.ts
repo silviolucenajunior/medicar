@@ -1,6 +1,6 @@
 export interface Agenda {
   data: string;
   horarios: [];
-  medico : number;
+  medico : any;
   id: number;
 }

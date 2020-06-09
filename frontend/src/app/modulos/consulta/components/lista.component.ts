@@ -15,7 +15,8 @@ export class ListaConsultaComponent implements OnInit {
   ngOnInit() {
     this.consultaService.getAll().subscribe (
       response => {
-        console.log("Sucesso");
+        console.log("Sucesso nas consultas");
+        this.items = response;
         console.log(response);
       },
       error => {

@@ -9,14 +9,14 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr *ngFor="let consulta of items">
             <td>Cardiologia</td>
             <td>Dr Caio de Castro</td>
             <td>01/02/2020</td>
             <td>11:00</td>
             <td>
                 <div>
-                    <button class="btn btn-link float-right">
+                    <button type="button" data-toggle="modal" data-target="#modalcontent" class="btn btn-link float-right">
                         <span class="btn-label"><i class="fa fa-times"></i></span>
                         Desmarcar
                     </button>
@@ -25,3 +25,15 @@
         </tr>
     </tbody>
 </table>
+
+<ng-template id="modalcontent" #modalcontent let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Editar equipamento</h4>
+        <button type="button" class="close close-button" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+    </div>
+    <div class="modal-body">
+        <!-- FORM E OUTROS CONTEUDOS -->
+    </div>
+</ng-template>

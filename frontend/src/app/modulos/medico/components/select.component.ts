@@ -10,7 +10,7 @@ import { Medico } from '../types/medico';
 export class MedicoSelectComponent implements OnInit, OnChanges {
   @Input() especialidade = null;
   medicos : Medico[];
-  selected;
+  selected = "";
 
   constructor (private medicoService : MedicoService) {}
 

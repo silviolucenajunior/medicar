@@ -1,8 +1,12 @@
-<select class="custom-select" [(ngModel)]="agenda" [attr.disabled]="especialidade && medico ? null : 'disabled'">
-  <option selected>Data</option>
-  <option *ngFor="let agenda of agendas" value="{{ agenda.id }}">{{ agenda.data }}</option>
-</select>
-<select class="custom-select" [(ngModel)]="horario" [attr.disabled]="agenda ? null : 'disabled'">
-  <option selected>Hora</option>
-  <option *ngFor="let horario of getAvailableHorarios()" value="{{horario.horario}}"> {{horario.horario}}</option>
-</select>
+<div class="form-group">
+    <select class="custom-select" [(ngModel)]="agenda" [attr.disabled]="especialidade && medico ? null : 'disabled'">
+    <option value="" selected>Data</option>
+    <option *ngFor="let agenda of agendas" value="{{ agenda.id }}">{{ agenda.data }}</option>
+  </select>
+</div>
+<div class="form-group">
+    <select class="custom-select" [(ngModel)]="horario" [attr.disabled]="agenda ? null : 'disabled'">
+    <option value="" selected>Hora</option>
+    <option *ngFor="let horario of getAvailableHorarios()" value="{{horario.id}}"> {{horario.horario}}</option>
+  </select>
+</div>

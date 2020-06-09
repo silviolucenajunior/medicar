@@ -8,3 +8,4 @@ class AgendaViewSet(viewsets.ModelViewSet):
   queryset = Agenda.objects.all()
   serializer_class = AgendaSerializer
   permission_classes = [permissions.IsAuthenticated]
+  filter_fields = ['medico']
